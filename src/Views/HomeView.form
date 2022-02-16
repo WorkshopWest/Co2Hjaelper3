@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Views.HomeView">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="2000" height="1000"/>
+    </constraints>
+    <properties>
+      <autoscrolls value="false"/>
+      <background color="-1118482"/>
+      <doubleBuffered value="true"/>
+      <enabled value="true"/>
+      <focusCycleRoot value="false"/>
+      <focusTraversalPolicyProvider value="false"/>
+      <font size="20"/>
+      <foreground color="-855310"/>
+      <inheritsPopupMenu value="false"/>
+      <minimumSize width="2000" height="750"/>
+      <preferredSize width="1500" height="600"/>
+    </properties>
+    <border type="none">
+      <title-color color="-16777216"/>
+    </border>
+    <children>
+      <grid id="12008" class="javax.swing.JLayeredPane" binding="JLayeredPane" layout-manager="CardLayout" hgap="0" vgap="0" show="c847c">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <doubleBuffered value="false"/>
+          <focusable value="true"/>
+          <foreground color="-855310"/>
+          <minimumSize width="105" height="450"/>
+          <preferredSize width="103" height="500"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="c847c" binding="pnlHome" layout-manager="GridBagLayout">
+            <constraints>
+              <card name="Home"/>
+            </constraints>
+            <properties>
+              <name value="Hjem"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <hspacer id="d07fd">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="1fd9e">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="a5e66" class="javax.swing.JTextField" binding="velkommenTilCo2HjælperTextField" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="24"/>
+                  <margin top="3" left="6" bottom="3" right="6"/>
+                  <minimumSize width="200" height="100"/>
+                  <text value="Velkommen til Co2Hjælper"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="6ccb6" class="javax.swing.JMenuBar" binding="MenuBar" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <focusTraversalPolicyProvider value="false"/>
+          <font size="24"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="41efb" class="javax.swing.JMenu" binding="Menu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="20" style="0"/>
+              <text value="Menu"/>
+            </properties>
+            <border type="bevel-raised"/>
+            <children>
+              <component id="2d6ae" class="javax.swing.JMenuItem" binding="LoginMenuItem">
+                <constraints/>
+                <properties>
+                  <font size="16"/>
+                  <text value="Bruger Login"/>
+                </properties>
+              </component>
+              <component id="51c63" class="javax.swing.JMenuItem" binding="IndkoebMenuItem">
+                <constraints/>
+                <properties>
+                  <font size="16"/>
+                  <text value="Indkøb"/>
+                </properties>
+              </component>
+              <component id="b5e6a" class="javax.swing.JMenuItem" binding="ForbrugMenuItem">
+                <constraints/>
+                <properties>
+                  <font size="16"/>
+                  <text value="Forbrug"/>
+                </properties>
+              </component>
+              <component id="95c7" class="javax.swing.JMenuItem" binding="HjemMenuItem">
+                <constraints/>
+                <properties>
+                  <actionCommand value="Home"/>
+                  <font size="16"/>
+                  <selected value="true"/>
+                  <text value="Hjem"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="74dcd" class="javax.swing.JLabel" binding="lblUser">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-855310"/>
+              <font size="16" style="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Co2_db">
+  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.14">
+    <root id="1">
+      <ServerVersion>1.4.200</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="CO2_DB">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="5" parent="4" name="BRUGERE"/>
+    <table id="6" parent="4" name="FØDEVARER"/>
+    <table id="7" parent="4" name="INDKØBSLISTER"/>
+    <table id="8" parent="4" name="INDKØBSLISTER_FØDEVARER"/>
+    <table id="9" parent="4" name="KATEGORI"/>
+    <column id="10" parent="5" name="BRUGERID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>NEXT VALUE FOR &quot;PUBLIC&quot;.&quot;SYSTEM_SEQUENCE_B86E4C28_9D48_41B5_9DFB_00E32D745FF1&quot;</DefaultExpression>
+    </column>
+    <column id="11" parent="5" name="BRUGERNAVN">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="12" parent="5" name="BRUGERPASSWORD">
+      <Position>3</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="5" name="BRUGERBUDGET">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+    </column>
+    <index id="14" parent="5" name="BRUGERE_BRUGERID_UINDEX_INDEX_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRUGERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="15" parent="5" name="PRIMARY_KEY_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRUGERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="16" parent="5" name="CONSTRAINT_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRUGERID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="17" parent="6" name="VAREID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>NEXT VALUE FOR &quot;PUBLIC&quot;.&quot;SYSTEM_SEQUENCE_B275F92A_CC57_40AD_960C_ACE94697FCB0&quot;</DefaultExpression>
+    </column>
+    <column id="18" parent="6" name="VARENAVN">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="6" name="CO2E PR. KG">
+      <Position>3</Position>
+      <DataType>DOUBLE(17)|8s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="6" name="VAREKAT">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="21" parent="6" name="FØDEVARER_VAREID_UINDEX_INDEX_B">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VAREID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="22" parent="6" name="PRIMARY_KEY_B">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VAREID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="23" parent="6" name="VAREKAT_INDEX_B">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VAREKAT</ColNames>
+    </index>
+    <key id="24" parent="6" name="CONSTRAINT_B">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>VAREID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="6" name="VAREKAT">
+      <ColNames>VAREKAT</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>KATEGORI</RefTableName>
+      <RefKeyName>CONSTRAINT_7</RefKeyName>
+      <RefColNames>KATID</RefColNames>
+    </foreign-key>
+    <column id="26" parent="7" name="INDKØBSLISTEID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>NEXT VALUE FOR &quot;PUBLIC&quot;.&quot;SYSTEM_SEQUENCE_48A1B793_97D6_4A7F_83B3_58BE50146ADF&quot;</DefaultExpression>
+    </column>
+    <column id="27" parent="7" name="INDKØBDATO">
+      <Position>2</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="7" name="BRUGERID">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="7" name="INDKØBSLISTER_INDKØBSLISTEID_UINDEX_INDEX_8">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INDKØBSLISTEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="30" parent="7" name="PRIMARY_KEY_8">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INDKØBSLISTEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="31" parent="7" name="INDKØBSLISTER_BRUGERE_BRUGERID_FK_INDEX_8">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRUGERID</ColNames>
+    </index>
+    <key id="32" parent="7" name="CONSTRAINT_8">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INDKØBSLISTEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="33" parent="7" name="INDKØBSLISTER_BRUGERE_BRUGERID_FK">
+      <ColNames>BRUGERID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>BRUGERE</RefTableName>
+      <RefKeyName>CONSTRAINT_3</RefKeyName>
+      <RefColNames>BRUGERID</RefColNames>
+    </foreign-key>
+    <column id="34" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>NEXT VALUE FOR &quot;PUBLIC&quot;.&quot;SYSTEM_SEQUENCE_5388D543_FE81_4C51_A0B8_068422359431&quot;</DefaultExpression>
+    </column>
+    <column id="35" parent="8" name="INDKØBSLISTEID">
+      <Position>2</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="8" name="FØDEVAREID">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="8" name="MÆNGDE">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="8" name="PRIMARY_KEY_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID
+FØDEVAREID
+INDKØBSLISTEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="8" name="INDKØBSLISTER_FØDEVARER_ID_UINDEX_INDEX_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="8" name="INDKØBSLISTER_FØDEVARER_INDKØBSLISTER_INDKØBSLISTEID_FK_INDEX_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INDKØBSLISTEID</ColNames>
+    </index>
+    <index id="41" parent="8" name="INDKØBSLISTER_FØDEVARER_FØDEVARER_VAREID_FK_INDEX_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>FØDEVAREID</ColNames>
+    </index>
+    <key id="42" parent="8" name="CONSTRAINT_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID
+FØDEVAREID
+INDKØBSLISTEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="43" parent="8" name="INDKØBSLISTER_FØDEVARER_ID_UINDEX_INDEX_E">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+    </key>
+    <foreign-key id="44" parent="8" name="INDKØBSLISTER_FØDEVARER_INDKØBSLISTER_INDKØBSLISTEID_FK">
+      <ColNames>INDKØBSLISTEID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>INDKØBSLISTER</RefTableName>
+      <RefKeyName>CONSTRAINT_8</RefKeyName>
+      <RefColNames>INDKØBSLISTEID</RefColNames>
+    </foreign-key>
+    <foreign-key id="45" parent="8" name="INDKØBSLISTER_FØDEVARER_FØDEVARER_VAREID_FK">
+      <ColNames>FØDEVAREID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>FØDEVARER</RefTableName>
+      <RefKeyName>CONSTRAINT_B</RefKeyName>
+      <RefColNames>VAREID</RefColNames>
+    </foreign-key>
+    <column id="46" parent="9" name="KATID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>NEXT VALUE FOR &quot;PUBLIC&quot;.&quot;SYSTEM_SEQUENCE_A1A5CBE5_AD09_4822_9C8C_4FF7AE6A2604&quot;</DefaultExpression>
+    </column>
+    <column id="47" parent="9" name="KATNAVN">
+      <Position>2</Position>
+      <DataType>VARCHAR(45)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="9" name="KATEGORI_KATID_UINDEX_INDEX_7">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>KATID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="49" parent="9" name="PRIMARY_KEY_7">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>KATID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="9" name="CONSTRAINT_7">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>KATID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
