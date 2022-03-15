@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Co2Hjælper3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Co2Hjælper3_jar</output-path>
+    <root id="archive" name="Co2Hjælper3.jar">
+      <element id="module-output" name="Co2Hjælper3" />
+      <element id="extracted-dir" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/H2/1.4.200/h2-1.4.200.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/Lgood/LGoodDatePicker-11.2.1.jar" path-in-jar="/" />
+      <element id="library" level="project" name="mysql-connector-java" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.5.3/jfreechart-1.5.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
